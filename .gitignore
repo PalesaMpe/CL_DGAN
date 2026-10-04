@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# PyCharm / IDE
+.idea/
+*.iml
+
+# TensorFlow / Keras generated files
+*.h5
+*.keras
+*.weights.h5
+checkpoint
+checkpoint.*
+
+# Training checkpoints / generated outputs
+checkpoints/
+checkpoints_*/
+generated/
+outputs/
+results/
+
+# Saved NumPy experiment data
+*.npy
+*.npz
+
+# TensorBoard logs
+logs/
+tensorboard/
+
+# Dataset folders
+data/
+datasets/
+
+# Kaggle / Hugging Face caches
+.cache/
+kaggle/
+huggingface/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# Environment variables / secrets
+.env
+.env.*
+
+# Temporary files
+*.tmp
+*.log
