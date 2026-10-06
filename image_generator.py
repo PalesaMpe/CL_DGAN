@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-epochs = [10,50,80]
+epochs = [10,50,100,180]
 saved = {}
 
 fig, axes = plt.subplots(
@@ -10,7 +10,7 @@ fig, axes = plt.subplots(
 
 for epoch in epochs:
     saved[epoch] = np.load(
-        f"checkpoints_cards/epoch_{epoch}/generated_images.npy"
+        f"checkpoints/epoch_{epoch}/generated_images.npy"
     )
 
 

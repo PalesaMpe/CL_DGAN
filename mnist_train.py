@@ -6,25 +6,7 @@ import discriminator
 from dcgan_checkpoint import GANCheckpoint
 import numpy as np
 
-# path  = kagglehub.dataset_download(
-#     "gpiosenka/cards-image-datasetclassification"
-# )
-#
-#
-# print("Dataset downloaded to:", path)
-# #tensorflow dataset
-# train_data = utils.image_dataset_from_directory(path+'/train',
-#                                                 labels=None,
-#
-#                                                 image_size=(64,64),
-#                                                 batch_size=128,
-#                                                 shuffle=True,
-#                                                 seed=42,
-#                                                 interpolation="bilinear")
-(x_train, y_train), (_, _) = datasets.mnist.load_data()
-
-print("Original dataset:", x_train.shape)
-
+(x_train, y_train),(_, _)= datasets.mnist.load_data()
 x_train = np.expand_dims(x_train, axis=-1)
 train_data = tf.data.Dataset.from_tensor_slices(x_train)
 
