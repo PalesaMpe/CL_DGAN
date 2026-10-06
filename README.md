@@ -22,7 +22,7 @@ pip install -r requirement.txt
 
 ---
 
-## 7. Running the Experiments
+### Running the Experiments
 
 ### Baseline training
 
