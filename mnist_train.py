@@ -67,4 +67,4 @@ checkpoint_callback = GANCheckpoint(
 )
 
 
-dcgan.fit(train, epochs=180,  callbacks=[checkpoint_callback])
+dcgan.fit(train, epochs=180,  callbacks=[checkpoint_callback]) #to train the model
