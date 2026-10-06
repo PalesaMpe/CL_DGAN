@@ -1,4 +1,3 @@
-import numpy as np
 from tensorflow.keras import layers, models
 
 def create_generator():

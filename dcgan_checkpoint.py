@@ -57,7 +57,6 @@ class GANCheckpoint(Callback):
             )
         )
 
-        # Generate fake images using fixed latent vectors
         generated_images = self.model.generator(
             self.fixed_noise,
             training=False
@@ -72,5 +71,5 @@ class GANCheckpoint(Callback):
         )
 
         print(
-            f"\nSaved checkpoint for epoch {current_epoch}"
+            f"Saved checkpoint for epoch {current_epoch}"
         )

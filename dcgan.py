@@ -1,4 +1,3 @@
-import numpy as np
 from tensorflow.keras import metrics, models,losses,optimizers
 import tensorflow as tf
 

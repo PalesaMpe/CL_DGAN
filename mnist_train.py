@@ -1,8 +1,7 @@
-from tensorflow.keras import datasets,utils,optimizers
+from tensorflow.keras import datasets, optimizers
 import tensorflow as tf
-from DGAN import DCGAN
-import generator
-import discriminator
+from dcgan import DCGAN
+from models import generator, discriminator
 from dcgan_checkpoint import GANCheckpoint
 import numpy as np
 

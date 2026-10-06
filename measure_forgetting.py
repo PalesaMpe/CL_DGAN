@@ -1,15 +1,13 @@
 import os
 import numpy as np
-import tensorflow as tf
 import matplotlib.pyplot as plt
 
-from discriminator import create_discriminator
+from models.discriminator import create_discriminator
 
 
-CHECKPOINT_DIR = "checkpoints"
+CHECKPOINT_DIR = "checkpoints_replay_mnist"
 epochs = [
-    10,20,30,40,50,60,70,80,90, 100,110,120,130,140, 150,160,170, 180
-]
+    10,20,30,40]
 """
 get all checkpoint samples
 evaluate discriminator accuracy, how well does the discriminator predict generated samples as fake
@@ -101,7 +99,7 @@ bwt_output = np.column_stack((epochs,np.array(bwt_values)))
 
 
 np.savetxt(
-    "bwt_by_epoch.csv",
+    "results/bwt_by_epoch_replay.csv",
     bwt_output,
     delimiter=",",
     header="epoch,bwt",
@@ -138,7 +136,7 @@ plt.tight_layout()
 
 
 plt.savefig(
-    "bwt_over_training.png",
+    "results/bwt_over_training_replay.png",
     dpi=300
 )
 plt.show()
