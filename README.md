@@ -1,7 +1,6 @@
-### Create a virtual environment
+### Create a virtual environment in src folder
 
 Windows:
-
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
