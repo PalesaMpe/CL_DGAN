@@ -7,41 +7,34 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 
-macOS/Linux:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
 ### Install dependencies
 
-```bash
-pip install -r requirement.txt
+```powershell
+pip install -r requirements.txt
 ```
 
 ---
 
-## 7. Running the Experiments
+## Running the Experiments
 
-### Baseline training
-
-Run the standard DCGAN:
+###  Training and results 
+The complete experiment can be run using the provided batch script
 
 ```bash
-python mnist_train.py
+.\run.bat
 ```
-### Replay training
+#### The script performs these steps
+1. Trains the baseline DCGAN
+2. Saves generator and discriminator checkpoints during training.
+3. Measures catastrophic forgetting using the saved baseline checkpoints.
+4. Trains the replay-based DCGAN.
+5. Saves replay generator and discriminator checkpoints during training.
+6. Measures catastrophic forgetting for the replay model.
+
+### Visualize generated sample
 
 Run:
 
 ```bash
-python train_replay.py
-```
-## Evaluating Catastrophic Forgetting
-
-Run:
-
-```bash
-python evaluate_forgetting.py
+python visualize_generated_samples.py
 ```

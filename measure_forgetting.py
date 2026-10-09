@@ -3,11 +3,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from models.discriminator import create_discriminator
+import argparse
 
+parser = argparse.ArgumentParser()
 
-CHECKPOINT_DIR = "checkpoints_replay_mnist"
+parser.add_argument("--type")
+args= parser.parse_args()
+CHECKPOINT_DIR =(
+    "checkpoints" if args.type == "baseline" else "checkpoints_replay_mnist"
+)
 epochs = [
-    10,20,30,40]
+    10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180]
 """
 get all checkpoint samples
 evaluate discriminator accuracy, how well does the discriminator predict generated samples as fake
@@ -99,7 +105,7 @@ bwt_output = np.column_stack((epochs,np.array(bwt_values)))
 
 
 np.savetxt(
-    "results/bwt_by_epoch_replay.csv",
+    "results/bwt_by_epoch_" + ("baseline.csv" if args.type == "baseline" else "replay.csv"),
     bwt_output,
     delimiter=",",
     header="epoch,bwt",
@@ -136,7 +142,7 @@ plt.tight_layout()
 
 
 plt.savefig(
-    "results/bwt_over_training_replay.png",
+    "results/bwt_over_training_"  + ("baseline.png" if args.type == "baseline" else "replay.png"),
     dpi=300
 )
-plt.show()
+#plt.show()

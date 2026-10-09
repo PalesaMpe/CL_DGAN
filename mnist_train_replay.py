@@ -24,7 +24,7 @@ train = (tf.data.Dataset.from_tensor_slices(x_train).shuffle(
         preprocess,
         num_parallel_calls=tf.data.AUTOTUNE
     )
-    .batch(128)
+    .batch(32)
     .prefetch(
         tf.data.AUTOTUNE
     )
